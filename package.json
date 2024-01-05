@@ -11,8 +11,8 @@
   "author": "Matthias Hryniszak <padcom@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@padcom/vue-i18n": "file:../vue-i18n/packages/vue",
-    "@padcom/vite-plugin-vue-i18n": "file:../vue-i18n/packages/vite-plugin",
+    "@padcom/vue-i18n": "0.3.0",
+    "@padcom/vite-plugin-vue-i18n": "0.3.0",
     "@vitejs/plugin-vue2": "^2.3.1",
     "vue": "^2.7.0"
   }
