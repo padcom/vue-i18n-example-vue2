@@ -7,5 +7,5 @@ export const i18n = createI18n({
   messages: {
     en,
     de,
-  }
+  },
 })
