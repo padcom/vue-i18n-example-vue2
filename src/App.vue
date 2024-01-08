@@ -1,27 +1,17 @@
 <template>
-  <HelloWorld />
+  <div>
+    <h1>Vue i18n example</h1>
+    <UseI18nLanguageSelector />
+    <GlobalLanguageSelector />
+    <ul>
+      <li><RouterLink to="/">Home</RouterLink></li>
+      <li><RouterLink to="/about">About</RouterLink></li>
+    </ul>
+    <RouterView />
+  </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import { createI18Context } from '@padcom/vue-i18n'
-import HelloWorld from './components/HelloWorld.vue'
-
-const messages = {
-  en: {
-    greeting: 'Some greeting',
-    hello: {
-      message: 'Hello, world!',
-    },
-  },
-}
-
-export default defineComponent({
-  components: {
-    HelloWorld,
-  },
-  setup() {
-    createI18Context({ messages })
-  },
-})
+<script lang="ts" setup>
+import UseI18nLanguageSelector from './components/UseI18nLanguageSelector.vue'
+import GlobalLanguageSelector from './components/GlobalLanguageSelector.vue'
 </script>

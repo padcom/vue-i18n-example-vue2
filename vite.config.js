@@ -7,4 +7,7 @@ export default defineConfig({
     vue(),
     i18n(),
   ],
+  optimizeDeps: {
+    exclude: ['@padcom/vue-i18n']
+  },
 })

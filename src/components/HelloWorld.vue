@@ -1,21 +1,18 @@
 <template>
   <div>
-    <h1>{{ t('hello.message') }}</h1>
-    <h2>{{ t('example.message', { name: 'John', age: 42 }) }}</h2>
-    <h3>{{ t('greeting') }}</h3>
+    <h3>{{ t('hello.message') }}</h3>
+    <h4>{{ t('example.message', { name: 'John', age: 42 }) }}</h4>
+    <h5>{{ t('greeting') }}</h5>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { watch } from 'vue'
 import { useI18n } from '@padcom/vue-i18n'
+import { i18n } from '../i18n'
 
-export default defineComponent({
-  setup() {
-    const { t } = useI18n()
-    return { t }
-  }
-})
+const { t, locale } = useI18n()
+watch([locale], () => { console.log('locale changed:', locale, i18n.locale) })
 </script>
 
 <i18n>
@@ -24,7 +21,12 @@ export default defineComponent({
     "example": {
       "message": "This is an example message to {name} {age}"
     }
-  }
+  },
+  "de": {
+    "example": {
+      "message": "Dies ist eine Beispielnachricht an {name} {age}"
+    }
+  },
 }
 </i18n>
 
